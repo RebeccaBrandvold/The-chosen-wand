@@ -27,7 +27,7 @@ public class ButtonEffects : MonoBehaviour {
 
     public void ExitPress()
     {
-        SceneManager.LoadScene(1/*SceneNumber*/);
+        Application.Quit();
     }
 
 
