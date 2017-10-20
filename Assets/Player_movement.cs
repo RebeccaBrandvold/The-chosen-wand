@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class Player_movement : MonoBehaviour 
 {
@@ -12,9 +13,19 @@ public class Player_movement : MonoBehaviour
 	public float deacceleration = 0.01f;
 	public bool movedRight = false;
 	public bool onGround;
+	public Text oldWord;
+	public bool hitWord = false;
+	public bool FirstWord = true;
+	public bool hasWord = true;
+	public GameObject Swim;
+	public GameObject Fuck;
+	public Text newWord;
+	private WordManagment word;
 
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
+		word = GetComponent<WordManagment> ();
+		//curword = Fuck.GetComponent<Text> ();
 	}
 
 
@@ -80,4 +91,25 @@ public class Player_movement : MonoBehaviour
 		if(other.gameObject.name == "Ground")
 			onGround = false;
 	}
+
+
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.tag == "Word") {
+			//have to find the text that is connected to that GameObject
+			//on this gameobject we want to find the connected Text
+			newWord = other.gameObject.GetComponent<Text> ();
+			hasWord = true;
+			oldWord = other.gameObject.GetComponent<Text> ();
+			//other.gameObject.SetActive (false);
+			hitWord = true;
+			FirstWord = false;
+		} else {
+			hasWord = false;
+			hitWord = false;
+		}
+		//need to activate the previous gameObject if we find another one
+		//need to replace the new word with the old
+	}
+
 }
