@@ -21,9 +21,11 @@ public class Player_movement : MonoBehaviour
 	public GameObject Fuck;
 	public Text newWord;
 	private WordManagment word;
+	public Text stored;
 
 	void Start () {
 		rb = GetComponent<Rigidbody> ();
+		//stored = GetComponent<GameObject> ();
 		word = GetComponent<WordManagment> ();
 		//curword = Fuck.GetComponent<Text> ();
 	}
@@ -99,7 +101,10 @@ public class Player_movement : MonoBehaviour
 			//have to find the text that is connected to that GameObject
 			//on this gameobject we want to find the connected Text
 			newWord = other.gameObject.GetComponent<Text> ();
+			//stored = other.gameObject.GetComponent<Text> ();
+			//starts the replacment
 			hasWord = true;
+			//then the oldword gets the same text. This to store the length of the word
 			oldWord = other.gameObject.GetComponent<Text> ();
 			//other.gameObject.SetActive (false);
 			hitWord = true;

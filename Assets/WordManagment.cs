@@ -27,7 +27,8 @@ public class WordManagment : MonoBehaviour {
 				Debug.Log (sentence.text.Length);
 				//int index = sentence.text.LastIndexOf (" ");
 				//sentence.text = sentence.text.Remove (index);
-				sentence.text = sentence.text.Remove (4, (sentence.text.Length) - plmo.oldWord.text.Length);
+				//plmo.stored.text = plmo.stored.text.Remove(5, (plmo.stored.text.Length - plmo.oldWord.text.Length));
+				sentence.text = sentence.text.Remove (4, (sentence.text.Length - plmo.oldWord.text.Length));
 				//sentence.text.Replace (plmo.curword.text, plmo.newWord.text);
 			}
 			result.text = sentence.text + plmo.newWord.text;
