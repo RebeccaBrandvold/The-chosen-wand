@@ -12,7 +12,7 @@ public class Player_movement : MonoBehaviour
 	public float acceleration = 0.1f;
 	public float deacceleration = 0.01f;
 	public bool movedRight = false;
-	public bool onGround;
+	public bool onGround = true;
 	public Text oldWord;
 	public bool hitWord = false;
 	public bool FirstWord = true;
