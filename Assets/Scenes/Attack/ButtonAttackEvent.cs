@@ -18,18 +18,13 @@ public class ButtonAttackEvent : MonoBehaviour {
 
   
 	void Start () {
-        //  button1.SetActive(false);//to make buttons dissapear and reappear FALSE REMOVES BUTTON
-        //  button2.SetActive(true);//to make buttons dissapear and reappear TRUE SHOWS BUTTON
-
-        /*button1 = GetComponent<Button>();
-        button1.onClick.AddListener(()=> HideButton());*/
-        //button1 = GameObject.Find("Hit");
+        
     }
 
     public void Button1Press()
     {
         // button1 = GetComponent<Button>();
-        button1.SetActive(false);
+        button1.SetActive(false);//True makes thewords reappear.
     }
     public void Button2Press()
     {
@@ -39,13 +34,17 @@ public class ButtonAttackEvent : MonoBehaviour {
     {
         button3.SetActive(false);
     }
-    // Update is called once per frame
-    void Update () {
-       // button1.SetActive(true);//to make buttons dissapear and reappear
-       // button2.SetActive(false);//to make buttons dissapear and reappear 
-    }
- 
-
+    
+    void Update () {}
+ /* //Yes hello i obvisouly know how to code IM TRYING TO MAKE THE RIGHT KILLING SEQUENCE???
+    // HYEALP AND EVERY other pattern or button is wrong to press?????
+    public void ButtonSequence()
+    {
+        if(Button1Press && Button2Press && Button3Press) //this is obisouly only if there's more words to press. 
+        {//would be nice if there was a right sequence instead.... 
+            Animalkilled = true;
+        }//If the animal isn't killed the player will lose 1 health and get attacked. unless game over ofc
+    }*/
 }
 /*public GameObject button1;
 public GameObject button2;
@@ -54,8 +53,8 @@ private bool AnimalKilled = false;
 private bool AnimalAttacks = false;*/
 
 /*What I want :
-    1 : Gjøre sånn at knappene popper opp på skjermen. V
-    2 : Gjøre sånn at knappene forsvinner når man har trykket på dem.
+    1 : Gjøre sånn at knappene popper opp på skjermen. X
+    2 : Gjøre sånn at knappene forsvinner når man har trykket på dem. X
     3 : Gjøre sånn at hvis knappene har blitt trykket på i en spesiel rekke følge dreper man dyret.           
     4 : Gjøre sånn at hvis knappene som ikke er riktig rekkefølge tar bort en av 3 sjanser.
     5 : Kanskje legge til tid på de
