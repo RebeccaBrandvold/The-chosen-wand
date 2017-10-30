@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class Player_movement : MonoBehaviour 
 {
-	private Rigidbody rb;
+	private Rigidbody2D rb;
 	public float speed = 2;
 	public float jumpstrength = 4;
 	public float maxSpeed = 8;
@@ -24,7 +24,7 @@ public class Player_movement : MonoBehaviour
 	public Text stored;
 
 	void Start () {
-		rb = GetComponent<Rigidbody> ();
+		rb = GetComponent<Rigidbody2D> ();
 		//stored = GetComponent<GameObject> ();
 		word = GetComponent<WordManagment> ();
 		//curword = Fuck.GetComponent<Text> ();
@@ -78,24 +78,25 @@ public class Player_movement : MonoBehaviour
 
 		if (Input.GetKeyDown (KeyCode.Space) && onGround == true|| Input.GetKey(KeyCode.W) && onGround == true){
 			//transform.Translate (pos.x, jumpstrength * Time.deltaTime, pos.z);
-			rb.velocity = new Vector3(rb.velocity.x, jumpstrength, rb.velocity.z);
+			rb.velocity = new Vector2(rb.velocity.x, jumpstrength);
 		}
 		//transform.Translate (speed * Time.deltaTime * Input.GetAxis("Horizontal"), curheight, 0);
 	}
 
-	void OnTriggerStay(Collider other)
+	void OnTriggerStay2D(Collider2D other)
 	{
-		if (other.gameObject.name == "Ground")
+		if (other.gameObject.tag == "Ground")
 			onGround = true;
 	}
-	void OnTriggerExit(Collider other)
+	/*
+	void OnTriggerExit2D(Collider2D other)
 	{
 		if(other.gameObject.name == "Ground")
 			onGround = false;
-	}
+	}*/
 
 
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEnter2D(Collider2D other)
 	{
 		if (other.gameObject.tag == "Word") {
 			//have to find the text that is connected to that GameObject
