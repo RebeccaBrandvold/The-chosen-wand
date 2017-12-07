@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
         //thisObj = this.GetComponent<GameObject>();
         pos = transform.position;
         //rb = GetComponent<Rigidbody2D>();
-    }
+    }   
 
     void Update()
     {
