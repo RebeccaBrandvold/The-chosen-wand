@@ -9,15 +9,17 @@ public class ButtonEffects : MonoBehaviour {
     public Button LoadGameButton;
     public Button SettingsGameButton;
     public Button ExitGameButton;
+    public Button BackToMainMenuButton;
+    public Button SoundOnOf;
 
     public void startPress()
     {
-        SceneManager.LoadScene(1/*SceneNumber*/);
+        SceneManager.LoadScene(0/*SceneNumber*/);
     }
 
     public void LoadSavePress()
     {
-        SceneManager.LoadScene(1/*SceneNumber*/);
+        SceneManager.LoadScene(0/*SceneNumber*/);
     }
 
     public void SettingsPress()
@@ -29,6 +31,12 @@ public class ButtonEffects : MonoBehaviour {
     {
         Application.Quit();
     }
+
+    public void BackToMainMenuPress()
+    {
+        SceneManager.LoadScene(0/*MAINMENUSCENENUMBER*/);
+    }
+
 
 
 }
