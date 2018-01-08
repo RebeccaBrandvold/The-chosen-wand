@@ -9,6 +9,7 @@ TagManager:
   - Hit
   - Burn
   - Kick
+  - Item Database
   layers:
   - Default
   - TransparentFX
