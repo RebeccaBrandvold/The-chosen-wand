@@ -9,6 +9,7 @@ TagManager:
   - Enemies
   - Bullet
   - Companion
+  - animal
   layers:
   - Default
   - TransparentFX
