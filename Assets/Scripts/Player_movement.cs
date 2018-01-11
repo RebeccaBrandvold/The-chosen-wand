@@ -94,7 +94,7 @@ public class Player_movement : MonoBehaviour
         {
             //RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.down, 2,layermask);
             Debug.DrawRay(transform.position, Vector3.down, Color.red);
-            Debug.Log("Hit ground");
+           // Debug.Log("Hit ground");
             //transform.Translate(new Vector3(transform.position.x, colPlayer.bounds.extents.y, 0));
 
             // Vector3 posfixy = new Vector3(transform.position.x, hit.distance - colPlayer.bounds.extents.y, transform.position.z);
