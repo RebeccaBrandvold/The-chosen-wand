@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Stat health;
     public float decreasePerMinute;
-
+    public float HealingSum;
     public bool witchHealing ;
 
     private void Awake() //
@@ -25,30 +25,50 @@ public class Player : MonoBehaviour
         //}
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(witchHealing)
+           // health.CurrentVal += 10; //increases current value with number  DIS WORKS BUT  VVV THAT DOESNT????
+            if (witchHealing)
             {
-                health.CurrentVal += 100; //reduces current value with 10
-           
+               
+                health.CurrentVal += 10; //increases current value with number
+                Debug.Log("currentValue" + health.CurrentVal);
+                Debug.Log("MaxValue" + health.MaxVal);
             }
             
            
-            //health.CurrentVal += 100; //reduces current value with 10
+            //health.CurrentVal += 100; //+ current value with 10
             //Debug.Log("bo" + health.CurrentVal);
         }
     }
 
     //detect
-    private void OnTriggerEnter2D(Collider2D other)
+    private void OnTriggerStay2D(Collider2D heal)
     {
         //if (transform.parent && transform.parent.gameObject.name + "heal" + other.gameObject.name) ;
 
-        if (other.gameObject.CompareTag("animal"))
+        if (heal.gameObject.tag == "animal")
         {
-            witchHealing = true;
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                Debug.Log("Pressed Space");
+                health.CurrentVal += HealingSum;
+                Debug.Log("CurrentValue" + health.CurrentVal);
+            }
+            if (Input.GetKeyUp(KeyCode.Space))
+            {
+                health.CurrentVal += 0;
+            }
         }
-        else
-        {
-            witchHealing = false;
-        }
+       // else
+        //{
+          //  witchHealing = false;
+       // }
     }
+
+   // private void OnTriggerExit2D(Collider2D other)
+    //{
+     //   if(!other.gameObject.CompareTag("animal"))
+       // {
+         //   witchHealing = false;
+        //}
+    //}
 }

@@ -152,143 +152,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
---- !u!1 &338703756
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 338703757}
-  - 61: {fileID: 338703758}
-  - 50: {fileID: 338703760}
-  - 61: {fileID: 338703759}
-  m_Layer: 0
-  m_Name: healhitbox
-  m_TagString: animal
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &338703757
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 338703756}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1459640664}
-  m_RootOrder: 1
---- !u!61 &338703758
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 338703756}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 1.129133, y: -0.7332986}
-  serializedVersion: 2
-  m_Size: {x: 12.779617, y: 7.266392}
---- !u!61 &338703759
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 338703756}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
---- !u!50 &338703760
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 338703756}
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!1 &519565044
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 519565045}
-  - 61: {fileID: 519565046}
-  - 50: {fileID: 519565048}
-  m_Layer: 0
-  m_Name: healhitbox
-  m_TagString: animal
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &519565045
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 519565044}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_Children: []
-  m_Father: {fileID: 1845068405}
-  m_RootOrder: 1
---- !u!61 &519565046
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 519565044}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 1.0670645, y: -0.9666255}
-  serializedVersion: 2
-  m_Size: {x: 12.77961, y: 6.533096}
---- !u!50 &519565048
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 519565044}
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &520223078
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +365,18 @@ Prefab:
     - target: {fileID: 21218174, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
       propertyPath: m_FlipX
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5830016, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
+      propertyPath: m_Radius
+      value: 2.2784748
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128318, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
+      propertyPath: m_Offset.x
+      value: 0.14254108
+      objectReference: {fileID: 0}
+    - target: {fileID: 6128318, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
+      propertyPath: m_Size.x
+      value: 4.714916
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5089014, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
@@ -906,7 +781,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 165778, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: animal
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5089014, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
@@ -1282,6 +1157,7 @@ MonoBehaviour:
     maxVal: 100
     currentVal: 100
   decreasePerMinute: 800
+  HealingSum: 0
   witchHealing: 0
 --- !u!4 &1245061901 stripped
 Transform:
@@ -1406,8 +1282,23 @@ MonoBehaviour:
     maxVal: 100
     currentVal: 100
   decreasePerMinute: 800
+  HealingSum: 0
   witchHealing: 0
---- !u!50 &1459640661
+--- !u!61 &1459640661
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1459640659}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5.4}
+--- !u!50 &1459640663
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 0
@@ -1419,11 +1310,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!4 &1459640664 stripped
 Transform:
   m_PrefabParentObject: {fileID: 440550, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
@@ -1489,7 +1380,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 165778, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
       propertyPath: m_TagString
-      value: Untagged
+      value: animal
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5089014, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
@@ -1605,9 +1496,24 @@ MonoBehaviour:
     bar: {fileID: 1317680289}
     maxVal: 100
     currentVal: 100
-  decreasePerMinute: 800
+  decreasePerMinute: 100
+  HealingSum: 12
   witchHealing: 0
---- !u!50 &1845068402
+--- !u!61 &1845068402
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1845068400}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 5, y: 5.4}
+--- !u!50 &1845068404
 Rigidbody2D:
   serializedVersion: 2
   m_ObjectHideFlags: 0
@@ -1619,11 +1525,11 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 7
 --- !u!4 &1845068405 stripped
 Transform:
   m_PrefabParentObject: {fileID: 440550, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
@@ -1753,6 +1659,7 @@ MonoBehaviour:
     maxVal: 100
     currentVal: 100
   decreasePerMinute: 0
+  HealingSum: 0
   witchHealing: 0
 --- !u!4 &2005115818
 Transform:
@@ -1787,6 +1694,7 @@ MonoBehaviour:
     maxVal: 100
     currentVal: 100
   decreasePerMinute: 0
+  HealingSum: 0
   witchHealing: 0
 --- !u!50 &2016280285
 Rigidbody2D:
