@@ -17,21 +17,17 @@ public class Crafting : MonoBehaviour
     private bool slot1fill = false;
     private bool slot2fill = false;
 
-    private GameObject Kantarell;
-    private GameObject Salmon;
-    private GameObject Rogn;
-
     public Image image;
     public Sprite sprite;
+
+    public GameObject[] itemtodel = new GameObject[2];
 
     void Start()
     {
         check1 = FindObjectOfType<Slot1_Check>();
         check2 = FindObjectOfType<Slot2_check>();
         curitem = FindObjectOfType<Drag>();
-        Kantarell = GameObject.FindGameObjectWithTag("Kantarell");
-        Salmon = GameObject.FindGameObjectWithTag("Salmon");
-        Rogn = GameObject.FindGameObjectWithTag("Rogn");
+
     }
 
     void Update()
@@ -40,10 +36,14 @@ public class Crafting : MonoBehaviour
         {
             image.sprite = sprite;
             Debug.Log("Yes, correct");
+            itemtodel[0].SetActive(false);
+            itemtodel[1].SetActive(false);
         }
-        else if (check2.kantarell && check2.salmon)
+        else if (check1.salmon && check2.kantarell)
         {
             image.sprite = sprite;
+            itemtodel[0].SetActive(false);
+            itemtodel[1].SetActive(false);
             Debug.Log("yEAH, WHATEVER");
         }
         else if(check1.rogn || check2.rogn)

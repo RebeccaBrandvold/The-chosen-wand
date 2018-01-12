@@ -30,4 +30,19 @@ public class Slot2_check : MonoBehaviour {
             salmon = true;
         }
     }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Rogn"))
+        {
+            rogn = false;
+        }
+        if (collision.gameObject.CompareTag("Kantarell"))
+        {
+            kantarell = false;
+        }
+        if (collision.gameObject.CompareTag("Salmon"))
+        {
+            salmon = false;
+        }
+    }
 }

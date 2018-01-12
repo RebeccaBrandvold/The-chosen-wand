@@ -9,6 +9,10 @@ TagManager:
   - Items
   - Kantarell
   - Rogn
+  - Salmon
+  - Slot1
+  - Slot2
+  - Inventory
   layers:
   - Default
   - TransparentFX

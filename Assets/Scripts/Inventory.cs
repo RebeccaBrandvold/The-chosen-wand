@@ -23,11 +23,17 @@ public class Inventory : MonoBehaviour
     public bool unlockKant = false;
     public bool unlockSalmon = false;
 
+    public GameObject rogn;
+    public GameObject kantarell;
+    public GameObject salmon;
+
     public int count = 0;
 	void Start ()
     {
         craft = FindObjectOfType<Crafting>();
-
+        kantarell.GetComponent<Drag>().enabled = false;
+        rogn.GetComponent<Drag>().enabled = false;
+        salmon.GetComponent<Drag>().enabled = false;
     }
 	
 	// Update is called once per frame
@@ -63,22 +69,22 @@ public class Inventory : MonoBehaviour
         //A way to see the silhoutte in inventory. 
         if (collision.gameObject.CompareTag("Rogn"))
         {
-
+            rogn.GetComponent<Drag>().enabled = true;
             unlockRogn = true;
             items[1].SetActive(false);
             changesprite1 = true;
         }
         if (collision.gameObject.CompareTag("Kantarell"))
         {
+            kantarell.GetComponent<Drag>().enabled = true;
             unlockKant = true;
             items[0].SetActive(false);
             changesprite = true;
         }
-        else
-            changesprite = false;
 
         if (collision.gameObject.CompareTag("Salmon"))
         {
+           salmon.GetComponent<Drag>().enabled = true;
             unlockSalmon = true;
             items[2].SetActive(false);
             changesprite2 = true;
