@@ -15,14 +15,18 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 
     private bool dragging = false;
     public bool onslot = false;
+    public bool onslot1 = false;
+    public bool onslot2 = false;
     private bool justonslot = false;
     public bool twoinslot = false;
     private float distance;
     private Vector2 distancebetweenobj;
 
     private Inventory inv;
-    public Vector3 orgpos;
+    //public Vector3 orgpos;
+    public Vector3 orgpos2;
     public RectTransform rect;
+
 
     //public GameObject other;
 
@@ -36,16 +40,20 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         inv = FindObjectOfType<Inventory>();
 
-        orgpos = rect.rect.position;
+       // orgpos = transform.position;
+        orgpos2 = transform.localPosition;
+       
         // thisobj = GetComponent<GameObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (test)
+        if (test && !onslot1 && !onslot2)
         {
-         //   rect.rect.position = orgpos;
+            //I'm not sure why I have to use localPosition in this case. Like kinda do. It has to move within in the canvas space, not world. 
+            transform.localPosition = orgpos2;
+            //transform.position = orgpos;
         }
 
         //apparently, I can't make the bug work again so kinda useless. Supposed to solve how to decide which object is in front of the other. 
@@ -94,6 +102,7 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
     void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
     {
+        test = true;
         dragging = false;
     }
 
@@ -102,6 +111,7 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         if (collision.gameObject.CompareTag("Slot1"))
         {
+            onslot1 = true;
             transform.position = slot1.transform.position;
             if (!justonslot)
                 StartCoroutine(MoveItemAgain());
@@ -109,6 +119,7 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
         if (collision.gameObject.CompareTag("Slot2"))
         {
+            onslot2 = true;
             transform.position = slot2.transform.position;
             if (!justonslot)
                 StartCoroutine(MoveItemAgain());
@@ -117,15 +128,17 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Slot1") || collision.gameObject.CompareTag("Slot2"))
+        if (collision.gameObject.CompareTag("Slot1"))
         {
+            onslot1 = false;
             justonslot = false;
             //move it back into right place in inventory. 
             //transform.position = orgpos;
         }
-        if (collision.gameObject.CompareTag("Inventory"))
+        if(collision.gameObject.CompareTag("Slot2"))
         {
-
+            onslot2 = false;
+            justonslot = false;
         }
 
     }

@@ -298,9 +298,12 @@ MonoBehaviour:
   waittime: 0.5
   test: 0
   onslot: 0
+  onslot1: 0
+  onslot2: 0
   twoinslot: 0
   orgpos: {x: 0, y: 0, z: 0}
-  rect: {fileID: 0}
+  orgpos2: {x: 0, y: 0, z: 0}
+  rect: {fileID: 164126267}
 --- !u!61 &164126271
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -481,9 +484,12 @@ MonoBehaviour:
   waittime: 0.5
   test: 0
   onslot: 0
+  onslot1: 0
+  onslot2: 0
   twoinslot: 0
   orgpos: {x: 0, y: 0, z: 0}
-  rect: {fileID: 0}
+  orgpos2: {x: 0, y: 0, z: 0}
+  rect: {fileID: 199513566}
 --- !u!114 &199513568
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1385,9 +1391,12 @@ MonoBehaviour:
   waittime: 0.5
   test: 0
   onslot: 0
+  onslot1: 0
+  onslot2: 0
   twoinslot: 0
   orgpos: {x: 0, y: 0, z: 0}
-  rect: {fileID: 0}
+  orgpos2: {x: 0, y: 0, z: 0}
+  rect: {fileID: 1282832813}
 --- !u!61 &1282832817
 BoxCollider2D:
   m_ObjectHideFlags: 0
