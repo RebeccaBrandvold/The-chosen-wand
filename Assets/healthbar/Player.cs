@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     public float decreasePerMinute;
 
     public bool witchHealing;
+    public Animation anim;
 
     private void Awake() //
     {
@@ -32,6 +33,18 @@ public class Player : MonoBehaviour
             //health.CurrentVal += 100; //reduces current value with 10
            // Debug.Log("bo" + health.CurrentVal);
         }
+        if(health.CurrentVal <=0) 
+        {   //Cue animtion
+            //Cue sound
+            anim = GetComponent<Animation>();
+           
+
+            anim.Play();
+            Debug.Log("Animation Playing");
+            Debug.Log("Animation" + anim);
+           
+        }
+        
 
     }
 
@@ -54,6 +67,27 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             witchHealing = false;
+        }
+    }
+
+
+
+    //To start the death animation and maybe death sound. 
+    //And stop the health from going up or down when pressed space
+    private void dead()
+    {   //If the current health is 0 then VVV
+        if(health.CurrentVal <= 0)
+        {   //if health.currentval = 0 then animalDeadAnimation = true. if animaldeadanimation = true then anim play.
+          
+            Debug.Log("animalDeadAnimation = True");     
+            //Stop healing function
+            
+        }
+        //To stop the health from going down and give the player the point
+        //Maybe an animation for this too. Happy animal?
+        if(health.CurrentVal >= 100)
+        {
+
         }
     }
 }
