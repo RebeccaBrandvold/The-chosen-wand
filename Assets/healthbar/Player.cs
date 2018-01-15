@@ -6,10 +6,12 @@ public class Player : MonoBehaviour
     [SerializeField]
     private Stat health;
     public float decreasePerMinute;
+    public bool death = false;
+    public bool saved = false;
 
     public bool witchHealing;
-    public Animation anim;
-
+    //public Animation anim;
+    public Animator anim;
     private void Awake() //
     {
         health.Initialized();
@@ -18,28 +20,31 @@ public class Player : MonoBehaviour
     void Update()
     {
         //Trying to get the health to decrease over time. 
+        if(!saved)
+        { 
         health.CurrentVal -= Time.deltaTime * decreasePerMinute / 60f;
-
+             }
         // if (Input.GetKeyDown(KeyCode.Q))
         // {
         //   health.CurrentVal += 10; //reduces current value with 10
         // }
-        if (Input.GetKeyDown(KeyCode.Space) && witchHealing)
+        if (Input.GetKeyDown(KeyCode.Space) && witchHealing && !death && !saved)
         {
 
             health.CurrentVal += 10; //reduces current value with 10
-
-
             //health.CurrentVal += 100; //reduces current value with 10
            // Debug.Log("bo" + health.CurrentVal);
+        }
+        if(health.CurrentVal >= 100)
+        {
+            saved = true;
         }
         if(health.CurrentVal <=0) 
         {   //Cue animtion
             //Cue sound
-            anim = GetComponent<Animation>();
-           
-
-            anim.Play();
+            anim = GetComponent<Animator>();
+            death = true;
+            anim.SetBool("NowYouDie", true);
             Debug.Log("Animation Playing");
             Debug.Log("Animation" + anim);
            
@@ -57,10 +62,6 @@ public class Player : MonoBehaviour
         {
             witchHealing = true;
         }
-        //  else
-        //  {
-        //      witchHealing = false;
-        //  }
     }
     private void OnTriggerExit2D(Collider2D collision)
     {

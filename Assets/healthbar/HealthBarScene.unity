@@ -773,7 +773,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440550, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 180.5
+      value: 179
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5089014, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
@@ -1275,7 +1275,7 @@ MonoBehaviour:
     currentVal: 100
   decreasePerMinute: 800
   witchHealing: 0
-  anim: {fileID: 1459640665}
+  anim: {fileID: 1459640666}
 --- !u!50 &1459640661
 Rigidbody2D:
   serializedVersion: 2
@@ -1325,6 +1325,23 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!95 &1459640666
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1459640659}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0ebb54ce852d9c74c9340ee0919dfd04, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1001 &1725299986
 Prefab:
   m_ObjectHideFlags: 0
@@ -1508,7 +1525,7 @@ MonoBehaviour:
     currentVal: 100
   decreasePerMinute: 800
   witchHealing: 0
-  anim: {fileID: 1845068406}
+  anim: {fileID: 1845068407}
 --- !u!50 &1845068402
 Rigidbody2D:
   serializedVersion: 2
@@ -1544,20 +1561,23 @@ BoxCollider2D:
 Transform:
   m_PrefabParentObject: {fileID: 440550, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
   m_PrefabInternal: {fileID: 959399093}
---- !u!111 &1845068406
-Animation:
+--- !u!95 &1845068407
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1845068400}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 754eff02ef6e56346a093dd0c6efd6b0, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 1ece216a1cd9813439d4526b0499afb1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1872554520
 GameObject:
   m_ObjectHideFlags: 0
@@ -1719,7 +1739,7 @@ MonoBehaviour:
     currentVal: 100
   decreasePerMinute: 0
   witchHealing: 0
-  anim: {fileID: 0}
+  anim: {fileID: 2016280289}
 --- !u!50 &2016280285
 Rigidbody2D:
   serializedVersion: 2
@@ -1741,23 +1761,20 @@ Rigidbody2D:
 Transform:
   m_PrefabParentObject: {fileID: 440550, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
   m_PrefabInternal: {fileID: 730606424}
---- !u!95 &2016280289
-Animator:
-  serializedVersion: 3
+--- !u!111 &2016280289
+Animation:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2016280281}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 3954765d4905d604f864bbfb69f63ff0, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 754eff02ef6e56346a093dd0c6efd6b0, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!1 &2068539172
 GameObject:
   m_ObjectHideFlags: 0
