@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Player_movement.cs.meta
+guid: 1ec4098cbb6621e41875177a7fe54e0e
+timeCreated: 1516119287
+=======
+guid: f7fc24a92b0208a4a9631fd3cd76e0cc
+timeCreated: 1515436602
+>>>>>>> Menu:Assets/Scenes/Menus/MainMenu/ToggleSound.cs.meta
+licenseType: Free
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
