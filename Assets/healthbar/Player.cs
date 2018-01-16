@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public float decreasePerMinute;
     public bool death = false;
     public bool saved = false;
-
+    public bool cameraTriggered;
     public bool witchHealing;
     //public Animation anim;
     public Animator anim;
@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     void Update()
     {
         //Trying to get the health to decrease over time. 
-        if(!saved)
+        if(!saved && cameraTriggered)
         { 
         health.CurrentVal -= Time.deltaTime * decreasePerMinute / 60f;
              }
