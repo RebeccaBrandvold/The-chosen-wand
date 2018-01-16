@@ -717,7 +717,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 440550, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -2.53
       objectReference: {fileID: 0}
     - target: {fileID: 440550, guid: a4c19953a1ba0df4aa22ac99db4c681a, type: 2}
       propertyPath: m_LocalPosition.z
@@ -1149,6 +1149,8 @@ MonoBehaviour:
     maxVal: 100
     currentVal: 100
   decreasePerMinute: 800
+  death: 0
+  saved: 0
   witchHealing: 0
   anim: {fileID: 0}
 --- !u!4 &1245061901 stripped
@@ -1274,6 +1276,8 @@ MonoBehaviour:
     maxVal: 100
     currentVal: 100
   decreasePerMinute: 800
+  death: 0
+  saved: 0
   witchHealing: 0
   anim: {fileID: 1459640666}
 --- !u!50 &1459640661
@@ -1524,6 +1528,8 @@ MonoBehaviour:
     maxVal: 100
     currentVal: 100
   decreasePerMinute: 800
+  death: 0
+  saved: 0
   witchHealing: 0
   anim: {fileID: 1845068407}
 --- !u!50 &1845068402
@@ -1703,6 +1709,8 @@ MonoBehaviour:
     maxVal: 100
     currentVal: 100
   decreasePerMinute: 0
+  death: 0
+  saved: 0
   witchHealing: 0
   anim: {fileID: 0}
 --- !u!4 &2005115818
@@ -1738,6 +1746,8 @@ MonoBehaviour:
     maxVal: 100
     currentVal: 100
   decreasePerMinute: 0
+  death: 0
+  saved: 0
   witchHealing: 0
   anim: {fileID: 2016280289}
 --- !u!50 &2016280285
