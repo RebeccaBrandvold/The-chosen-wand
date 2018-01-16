@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player : MonoBehaviour
+public class Animal : MonoBehaviour
 {
     [SerializeField]
     private Stat health;
@@ -20,10 +20,10 @@ public class Player : MonoBehaviour
     void Update()
     {
         //Trying to get the health to decrease over time. 
-        if(!saved)
-        { 
-        health.CurrentVal -= Time.deltaTime * decreasePerMinute / 60f;
-             }
+        if (!saved)
+        {
+            health.CurrentVal -= Time.deltaTime * decreasePerMinute / 60f;
+        }
         // if (Input.GetKeyDown(KeyCode.Q))
         // {
         //   health.CurrentVal += 10; //reduces current value with 10
@@ -32,14 +32,14 @@ public class Player : MonoBehaviour
         {
 
             health.CurrentVal += 10; //reduces current value with 10
-            //health.CurrentVal += 100; //reduces current value with 10
-           // Debug.Log("bo" + health.CurrentVal);
+                                     //health.CurrentVal += 100; //reduces current value with 10
+                                     // Debug.Log("bo" + health.CurrentVal);
         }
-        if(health.CurrentVal >= 100)
+        if (health.CurrentVal >= 100)
         {
             saved = true;
         }
-        if(health.CurrentVal <=0) 
+        if (health.CurrentVal <= 0)
         {   //Cue animtion
             //Cue sound
             anim = GetComponent<Animator>();
@@ -47,9 +47,9 @@ public class Player : MonoBehaviour
             anim.SetBool("NowYouDie", true);
             Debug.Log("Animation Playing");
             Debug.Log("Animation" + anim);
-           
+
         }
-        
+
 
     }
 
@@ -77,16 +77,16 @@ public class Player : MonoBehaviour
     //And stop the health from going up or down when pressed space
     private void dead()
     {   //If the current health is 0 then VVV
-        if(health.CurrentVal <= 0)
+        if (health.CurrentVal <= 0)
         {   //if health.currentval = 0 then animalDeadAnimation = true. if animaldeadanimation = true then anim play.
-          
-            Debug.Log("animalDeadAnimation = True");     
+
+            Debug.Log("animalDeadAnimation = True");
             //Stop healing function
-            
+
         }
         //To stop the health from going down and give the player the point
         //Maybe an animation for this too. Happy animal?
-        if(health.CurrentVal >= 100)
+        if (health.CurrentVal >= 100)
         {
 
         }
