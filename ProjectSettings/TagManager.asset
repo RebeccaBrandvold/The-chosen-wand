@@ -6,12 +6,6 @@ TagManager:
   tags:
   - Word
   - Ground
-<<<<<<< HEAD
-=======
-  - Enemies
-  - Bullet
-  - Companion
->>>>>>> Healing
   - animal
   layers:
   - Default
@@ -22,7 +16,7 @@ TagManager:
   - UI
   - 
   - 
-  - Player
+  - 
   - 
   - 
   - 
