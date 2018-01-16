@@ -13,6 +13,11 @@ TagManager:
   - Slot1
   - Slot2
   - Inventory
+  - Spot
+  - Animal
+  - Rose_red
+  - Rose_yellow
+  - Stone
   layers:
   - Default
   - TransparentFX
@@ -23,7 +28,7 @@ TagManager:
   - 
   - 
   - Background
-  - 
+  - Animal
   - 
   - 
   - 

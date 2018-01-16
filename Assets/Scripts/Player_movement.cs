@@ -19,6 +19,8 @@ public class Player_movement : MonoBehaviour
     //public Bounds bounds;
     public Collider2D colPlayer;
     private LayerMask layermask;
+    private SpriteRenderer rend;
+    public bool playerturnedLeft = false;
 
     void Start()
     {
@@ -27,6 +29,7 @@ public class Player_movement : MonoBehaviour
         colPlayer = GetComponent<Collider2D>();
        //ayermask = GetComponent<LayerMask>();
         layermask = LayerMask.NameToLayer("Ground");
+        rend = GetComponent<SpriteRenderer>();
     }
 
 
@@ -37,6 +40,8 @@ public class Player_movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.D))
         {
+            rend.flipX = true;
+            playerturnedLeft = true;
             movedRight = true;
             if (speed >= maxSpeed)
                 speed = maxSpeed;
@@ -57,6 +62,8 @@ public class Player_movement : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
+            playerturnedLeft = false;
+            rend.flipX = false;
             if (movedRight)
             {
                 speed = speed / 2;
@@ -113,17 +120,12 @@ public class Player_movement : MonoBehaviour
     {
         if (other.gameObject.tag == "Ground")
             onGround = true;
-        if (other.gameObject.tag == "Companion")
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Ground")
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                if (heal.curHealth == 3)
-                {
-                    heal.curHealth = 3;
-                }
-                else
-                    heal.recoverHealth(1);
-            }
+            onGround = false;
         }
     }
 }

@@ -5,22 +5,29 @@ public class Taming : MonoBehaviour
 {
     public GameObject tamingmenu;
 
-    void Start () {
-	
-	}
-	
+    private Crafting craft;
 
-	void Update ()
+    void Start()
     {
+        craft = FindObjectOfType<Crafting>();
+
+    }
+
+
+    void Update()
+    {
+        if (craft.lost)
+            tamingmenu.SetActive(false);
 
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
-            tamingmenu.SetActive(true);
+            if (!craft.lost)
+                tamingmenu.SetActive(true);
         }
     }
     private void OnTriggerExit2D(Collider2D collision)
