@@ -15,7 +15,7 @@ public class Player_movement : MonoBehaviour
     public bool onGround;
 
     private RaycastHit2D hit;
-    private Healing heal;
+    //private Healing heal;
     //public Bounds bounds;
     public Collider2D colPlayer;
     private LayerMask layermask;
@@ -24,7 +24,7 @@ public class Player_movement : MonoBehaviour
 
     void Start()
     {
-        heal = GetComponent<Healing>();
+      
         rb = GetComponent<Rigidbody2D>();
         colPlayer = GetComponent<Collider2D>();
        //ayermask = GetComponent<LayerMask>();

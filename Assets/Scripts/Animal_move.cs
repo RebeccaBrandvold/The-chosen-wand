@@ -18,15 +18,15 @@ public class Animal_move : MonoBehaviour
     public float rayDistance = 2;
     private bool meetPlayer = false;
     private Player_movement playmove;
-    private Crafting craft;
+   // private Crafting craft;
 
     // Use this for initialization
     void Start()
     {
         playmove = FindObjectOfType<Player_movement>();
-        craft = FindObjectOfType<Crafting>();
+        //craft = FindObjectOfType<Crafting>();
         rend = GetComponent<SpriteRenderer>();
-        anim = GetComponent<Animator>();
+      //  anim = GetComponent<Animator>();
         StartCoroutine(wagnomore());
         //    //To get the colliders to ignore eachother. 
 
@@ -40,23 +40,9 @@ public class Animal_move : MonoBehaviour
     void Update()
     {
         Physics2D.IgnoreCollision(Player.GetComponent<Collider2D>(), Animal.GetComponent<Collider2D>());
-        //Animation
-        if (test)
-        {
-            wagging = true;
-            anim.SetBool("Wagging", wagging);
-        }
-        else
-        {
-            wagging = false;
-            anim.SetBool("Wagging", wagging);
-        }
-
-        //Makes the animal follow the player forever if they have sucessfully tamed. Unlocked = true when you have combined correctly in crafting script. 
-        if (!meetPlayer && craft.unlocked)
-        {
+          
             transform.position = Vector3.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-        }
+      
 
     }
 
