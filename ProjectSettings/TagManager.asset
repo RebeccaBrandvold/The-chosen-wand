@@ -18,6 +18,9 @@ TagManager:
   - Rose_red
   - Rose_yellow
   - Stone
+  - Potion
+  - Bag
+  - Branch
   layers:
   - Default
   - TransparentFX
@@ -29,8 +32,8 @@ TagManager:
   - 
   - Background
   - Animal
-  - 
-  - 
+  - Player
+  - Tree
   - 
   - 
   - 

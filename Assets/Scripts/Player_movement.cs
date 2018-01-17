@@ -24,6 +24,7 @@ public class Player_movement : MonoBehaviour
 
     void Start()
     {
+        //this.gameObject.layer = 8;
         heal = GetComponent<Healing>();
         rb = GetComponent<Rigidbody2D>();
         colPlayer = GetComponent<Collider2D>();
@@ -83,7 +84,6 @@ public class Player_movement : MonoBehaviour
             if (rbvel != 0)
                 speed -= deacceleration;
         }
-
 
         Vector3 pos = new Vector3(speed * Time.deltaTime * Input.GetAxis("Horizontal"), 0, 0);
         transform.Translate(pos.x, pos.y, pos.z);
