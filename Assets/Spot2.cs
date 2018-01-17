@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Spot2 : MonoBehaviour
 {
-    public GameObject other;
+    public GameObject firstSpot;
+    public GameObject backSpot;
     public Transform animal;
     public bool move = false;
     public bool justtransported = false;
@@ -21,7 +22,7 @@ public class Spot2 : MonoBehaviour
     {
         if (move)
         {
-            animal.position = other.transform.position;
+            animal.position = firstSpot.transform.position;
             move = false;
             justtransported = true;
         }
@@ -43,6 +44,7 @@ public class Spot2 : MonoBehaviour
                 animal.gameObject.SetActive(false);
                 move = true;
             }
+           
         }
     }
     private void OnTriggerExit2D(Collider2D collision)

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Teleport : MonoBehaviour
 {
-    public GameObject other;
+    public GameObject too;
     public bool transported = false;
     public bool move = false;
     public Transform animal;
@@ -19,7 +19,7 @@ public class Teleport : MonoBehaviour
     {
         if (move)
         {
-            animal.transform.position = other.transform.position;
+            animal.transform.position = too.transform.position;
         }
         if (transported)
         {
@@ -28,7 +28,7 @@ public class Teleport : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Animal"))
         {

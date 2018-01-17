@@ -3,12 +3,23 @@ using System.Collections;
 
 public class Spot1 : MonoBehaviour
 {
-    public GameObject otherspot;
+    public GameObject firstSpot;//i changed name
+    public GameObject backSpot;//me
     public Transform animal;
     private bool move = false;
     public bool justtransported = false;
 
     private Spot2 spot2;
+
+    public static float AngleDir(Vector2 A, Vector2 B)// TO CHECK IF RIGHT OR LEFT this is for 2D 
+    {
+        return -A.x * B.y + A.y * B.x;//This returns a negative number if B is left of A, positive if right of A, or 0 if they are perfectly aligned.
+    }
+
+    
+
+
+
     // Use this for initialization
     void Start()
     {
@@ -20,7 +31,7 @@ public class Spot1 : MonoBehaviour
     {
         if (move)
         {
-            animal.position = otherspot.transform.position;
+            animal.position = firstSpot.transform.position;
             move = false;
             justtransported = true;
         }
@@ -42,7 +53,7 @@ public class Spot1 : MonoBehaviour
             }
         }
     }
-    private void OnTriggerExit2D(Collider2D collision)
+  private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Animal"))
         {
