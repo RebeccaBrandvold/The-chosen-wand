@@ -11,15 +11,6 @@ public class Spot1 : MonoBehaviour
 
     private Spot2 spot2;
 
-    public static float AngleDir(Vector2 A, Vector2 B)// TO CHECK IF RIGHT OR LEFT this is for 2D 
-    {
-        return -A.x * B.y + A.y * B.x;//This returns a negative number if B is left of A, positive if right of A, or 0 if they are perfectly aligned.
-    }
-
-    
-
-
-
     // Use this for initialization
     void Start()
     {
