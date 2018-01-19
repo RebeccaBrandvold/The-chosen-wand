@@ -19,30 +19,39 @@ public class rightTransform : MonoBehaviour {
         spaceLeftShroom = Player.transform.position.x - Entry1.transform.position.x;
         spaceRightShroom = Player.transform.position.x - this.transform.position.x;
         //if player shroom  shroom player = kan se animal
-
-        if (spaceRightShroom <= 0 && spaceLeftShroom >= 0 && okayToTeleport)//if player is to the left of right shroom and right of left shroom.
-        {
+        //if player is to the left of right shroom and right of left shroom.
+        if (spaceRightShroom <= 0 && spaceLeftShroom >= 0 && !okayToTeleport)
+        { 
             animal.gameObject.SetActive(false);//animal legone
         }
-        //if shroom player shroom = kan ikke se animal
+        else
+        {//Sets animal into the original 
+            animal.gameObject.SetActive(true);
+        }
+        //if shroom-player-shroom = kan ikke se animal
         //animal.gameObject.SetActive(true);
     }
+
+    //Need to remove the animal when the Witch is between the left and right bush.
     private void removeThyAnimal()
-    {//If the witch is on the right side of the portal 
+    {
+        //If the witch is on the right side of the portal 
         if(diff <=0)
         {
-            okayToTeleport = true;
-          //  animal.gameObject.SetActive(false);
+            okayToTeleport = true;//okay to teleport.
+            animal.gameObject.SetActive(false);
         }
-        else
+        else//not okay to teleport when on the other side
         {
-         //   animal.gameObject.SetActive(true);
+            animal.gameObject.SetActive(true);
         }
     }
+    //The teleport function in itself. That changes the positon.
     private Vector2 teleport()
     {//Sends the animal to the position of the chosen exit. 
         return animal.position = Exit.transform.position;
     }
+    //Need to check the collider if its okay to teleport and that the gameobject with the collider is tagged Animal
     private void OnTriggerEnter2D(Collider2D col)
     {//Checks if its okayToTeleport and if the col.gameobject is tagged animal
         if (okayToTeleport && col.gameObject.CompareTag("Animal"))
