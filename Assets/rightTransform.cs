@@ -72,7 +72,7 @@ public class rightTransform : MonoBehaviour {
     //Need to check the collider if its okay to teleport and that the gameobject with the collider is tagged Animal
     private void OnTriggerEnter2D(Collider2D col)
     {//Checks if its okayToTeleport and if the col.gameobject is tagged animal
-        if (okayToTeleport && col.gameObject.CompareTag("Animal") || animalRightBushDiff <=0 && animalLeftBushDiff >= 0)
+        if (okayToTeleport && col.gameObject.CompareTag("Animal")/* || animalRightBushDiff <=0 && animalLeftBushDiff >= 0*/)
         {
             teleport();          
         }

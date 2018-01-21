@@ -71,7 +71,7 @@ private void teleportTrue()
     //Need to check the collider if its okay to teleport and that the gameobject with the collider is tagged Animal
     private void OnTriggerEnter2D(Collider2D col)
     {//Checks if its okaytoteleport and if the col.gameobject is tagged animal
-        if (okayToTeleport && col.gameObject.CompareTag("Animal") || animalLeftBushDiff >=0 && animalRightBushDiff <=0)
+        if (okayToTeleport && col.gameObject.CompareTag("Animal") /*|| animalLeftBushDiff >=0 && animalRightBushDiff <=0*/)
         {
             teleport();
           
