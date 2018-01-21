@@ -227,7 +227,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 82925376}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.49, y: -0.46, z: 0}
+  m_LocalPosition: {x: 6.57, y: 1.12, z: 0}
   m_LocalScale: {x: 0.3806038, y: 0.3806038, z: 0.3806038}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -525,7 +525,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 439528662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.21, y: -0.5, z: 0}
+  m_LocalPosition: {x: -4.63, y: -0.5, z: 0}
   m_LocalScale: {x: 0.36658365, y: 0.36658365, z: 0.36658365}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -1047,6 +1047,60 @@ Transform:
   - {fileID: 439528663}
   m_Father: {fileID: 0}
   m_RootOrder: 10
+--- !u!1001 &1656039248
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 453152, guid: 4f0af47486dcccd4caf060fb8307c21c, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 30.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 453152, guid: 4f0af47486dcccd4caf060fb8307c21c, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -3.49
+      objectReference: {fileID: 0}
+    - target: {fileID: 453152, guid: 4f0af47486dcccd4caf060fb8307c21c, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 1.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 453152, guid: 4f0af47486dcccd4caf060fb8307c21c, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 453152, guid: 4f0af47486dcccd4caf060fb8307c21c, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 453152, guid: 4f0af47486dcccd4caf060fb8307c21c, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: -0.012279434
+      objectReference: {fileID: 0}
+    - target: {fileID: 453152, guid: 4f0af47486dcccd4caf060fb8307c21c, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: -0.9999246
+      objectReference: {fileID: 0}
+    - target: {fileID: 453152, guid: 4f0af47486dcccd4caf060fb8307c21c, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 173740, guid: 4f0af47486dcccd4caf060fb8307c21c, type: 2}
+      propertyPath: m_Name
+      value: ground (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 173740, guid: 4f0af47486dcccd4caf060fb8307c21c, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 453152, guid: 4f0af47486dcccd4caf060fb8307c21c, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 1.366
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 4f0af47486dcccd4caf060fb8307c21c, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &1744002636
 GameObject:
   m_ObjectHideFlags: 0
@@ -1059,8 +1113,9 @@ GameObject:
   - 68: {fileID: 1744002640}
   - 50: {fileID: 1744002639}
   - 114: {fileID: 1744002638}
+  - 68: {fileID: 1744002642}
   m_Layer: 0
-  m_Name: Enter2
+  m_Name: RightBush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1073,8 +1128,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1744002636}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.63, y: -0.4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 5.01, y: 1.33, z: 0}
+  m_LocalScale: {x: 0.74113643, y: 0.74113643, z: 0.74113643}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1577281381}
@@ -1092,9 +1147,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Exit: {fileID: 439528662}
   Player: {fileID: 1407880310}
-  Entry1: {fileID: 1767320251}
+  leftBush: {fileID: 1767320251}
   animal: {fileID: 124425011}
+  animal1: {fileID: 124425007}
   okayToTeleport: 0
+  isTeleported: 0
+  witchBetweenBushes: 0
 --- !u!50 &1744002639
 Rigidbody2D:
   serializedVersion: 2
@@ -1125,8 +1183,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -0.077287674, y: -1.1894956}
-  - {x: -0.06809521, y: 1.2291455}
+  - {x: 0.2355528, y: -1.1584604}
+  - {x: -0.83266693, y: 2.161792}
 --- !u!212 &1744002641
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1160,6 +1218,21 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!68 &1744002642
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1744002636}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: -1.5593206, y: 1.3345292}
+  - {x: -1.1407745, y: -1.0241734}
 --- !u!1 &1767320251
 GameObject:
   m_ObjectHideFlags: 0
@@ -1172,8 +1245,9 @@ GameObject:
   - 68: {fileID: 1767320253}
   - 50: {fileID: 1767320256}
   - 114: {fileID: 1767320255}
+  - 68: {fileID: 1767320257}
   m_Layer: 0
-  m_Name: Enter1
+  m_Name: LeftBush
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1186,8 +1260,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1767320251}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.24, y: -0.18, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -3.81, y: -0.18, z: 0}
+  m_LocalScale: {x: 0.68766654, y: 0.68766654, z: 0.68766654}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 1577281381}
@@ -1205,8 +1279,8 @@ EdgeCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   m_Points:
-  - {x: -0.077287674, y: -1.1894956}
-  - {x: -0.06809521, y: 1.2291455}
+  - {x: -0.4917358, y: -1.1672996}
+  - {x: 0.993439, y: -1.1499654}
 --- !u!212 &1767320254
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1253,9 +1327,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Exit: {fileID: 82925376}
   Player: {fileID: 1407880310}
-  Entry2: {fileID: 1744002636}
+  RightBush: {fileID: 1744002636}
   animal: {fileID: 124425011}
+  animal1: {fileID: 124425007}
   okayToTeleport: 0
+  isTeleported: 0
+  witchBetweenBushes: 0
 --- !u!50 &1767320256
 Rigidbody2D:
   serializedVersion: 2
@@ -1273,6 +1350,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!68 &1767320257
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1767320251}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+  - {x: 1.9310791, y: 0.86966676}
+  - {x: 1.6479362, y: -1.1372576}
 --- !u!1 &1895087385
 GameObject:
   m_ObjectHideFlags: 0

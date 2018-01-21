@@ -3,60 +3,88 @@ using System.Collections;
 
 public class rightTransform : MonoBehaviour {
 
-    public GameObject Exit;
-    public GameObject Player;
-    public GameObject Entry1;
-    public Transform animal;
-    private float diff;
-    private float spaceLeftShroom;
-    private float spaceRightShroom; 
-    public bool okayToTeleport = false;
+    public GameObject Exit; //Where the portals exit is
+    public GameObject Player; //Needs to know where the player is
+    public GameObject leftBush; //Needs to know where the oposite portal entry is.
+    public Transform animal; //Neeeds the transform of the animal to teleport the position.
+    public GameObject animal1;
+    private float playerRightBushDiff;
+    private float playerLeftBushDiff;
+    private float animalRightBushDiff;
+    private float animalLeftBushDiff;
+    public bool okayToTeleport = false; //Needs to check if its okay to teleport the animal.
+    public bool isTeleported = false;//Need to check if animal has gone into teleporter.
+    public bool witchBetweenBushes = false;
 	
 	// Update is called once per frame
 	void Update () {
-        diff = Player.transform.position.x - this.transform.position.x;
-        //
-        spaceLeftShroom = Player.transform.position.x - Entry1.transform.position.x;
-        spaceRightShroom = Player.transform.position.x - this.transform.position.x;
-        //if player shroom  shroom player = kan se animal
-        //if player is to the left of right shroom and right of left shroom.
-        if (spaceRightShroom <= 0 && spaceLeftShroom >= 0 && !okayToTeleport)
-        { 
-            animal.gameObject.SetActive(false);//animal legone
+        playerRightBushDiff = Player.transform.position.x - this.transform.position.x;
+        playerLeftBushDiff = Player.transform.position.x - leftBush.transform.position.x;
+        animalRightBushDiff = animal1.transform.position.x - this.transform.position.x;
+        animalLeftBushDiff = animal1.transform.position.x - leftBush.transform.position.x;
+
+        teleportTrue();
+        removeThyAnimal();
+    }
+
+  //Checking if the Witch is between the Right and Left bush.
+  //Sets the bool to true if she is. 
+  public void WhereIsWitch()
+    {//if(Witch-right <=0 && Witch-left >=0)
+        if(playerRightBushDiff <=0 && playerLeftBushDiff >=0)
+        {
+            witchBetweenBushes = true;
+        }
+        else
+        {
+            witchBetweenBushes = false;
+        }
+    }
+   
+    //Need to remove the animal when the Witch is between the left and right bush.
+    private void removeThyAnimal()
+    {
+        //If its true, then the animal should be gone. Until the function is false again. 
+        if (witchBetweenBushes && isTeleported)
+        {
+            animal.gameObject.SetActive(false);//animal le-gone
         }
         else
         {//Sets animal into the original 
             animal.gameObject.SetActive(true);
         }
-        //if shroom-player-shroom = kan ikke se animal
-        //animal.gameObject.SetActive(true);
     }
 
-    //Need to remove the animal when the Witch is between the left and right bush.
-    private void removeThyAnimal()
-    {
-        //If the witch is on the right side of the portal 
-        if(diff <=0)
+   //Checks if the animal can teleport
+    private void teleportTrue()
+    {//if(player-right <= 0)
+        if (playerRightBushDiff <= 0)
         {
-            okayToTeleport = true;//okay to teleport.
-            animal.gameObject.SetActive(false);
+            okayToTeleport = true;
+            removeThyAnimal();
         }
-        else//not okay to teleport when on the other side
+        else
         {
-            animal.gameObject.SetActive(true);
-        }
+            okayToTeleport = false;
+        }      
     }
-    //The teleport function in itself. That changes the positon.
-    private Vector2 teleport()
-    {//Sends the animal to the position of the chosen exit. 
-        return animal.position = Exit.transform.position;
-    }
+
     //Need to check the collider if its okay to teleport and that the gameobject with the collider is tagged Animal
     private void OnTriggerEnter2D(Collider2D col)
     {//Checks if its okayToTeleport and if the col.gameobject is tagged animal
-        if (okayToTeleport && col.gameObject.CompareTag("Animal"))
+        if (okayToTeleport && col.gameObject.CompareTag("Animal") || animalRightBushDiff <=0 && animalLeftBushDiff >= 0)
         {
-            teleport();
+            teleport();          
         }
     }
+
+    //The teleport function in itself. That changes the positon.
+    private Vector2 teleport()
+    {
+        isTeleported = true;//Checks if animal has teleported.
+        //Sends the animal to the position of the chosen exit. 
+        return animal.position = Exit.transform.position;
+    }
 }
+//Needs two Trigger Colliders to work because if the withc walks too slow the animal wont teleport
+//IM MISSING THE PART WHERE IT'LL STOP SPAMMING TELEPORT BACK AND FORTH.
