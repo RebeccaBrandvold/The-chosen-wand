@@ -45,8 +45,8 @@ public class Animal : MonoBehaviour
             anim = GetComponent<Animator>();
             death = true;
             anim.SetBool("NowYouDie", true);
-            Debug.Log("Animation Playing");
-            Debug.Log("Animation" + anim);
+///            Debug.Log("Animation Playing");
+  //          Debug.Log("Animation" + anim);
 
         }
 
