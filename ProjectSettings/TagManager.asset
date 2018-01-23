@@ -3,28 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-<<<<<<< HEAD
   tags: []
-=======
-  tags:
-  - Word
-  - Ground
-  - Items
-  - Kantarell
-  - Rogn
-  - Salmon
-  - Slot1
-  - Slot2
-  - Inventory
-  - Spot
-  - Animal
-  - Rose_red
-  - Rose_yellow
-  - Stone
-  - Potion
-  - Bag
-  - Branch
->>>>>>> Inventory
   layers:
   - Default
   - TransparentFX
@@ -34,17 +13,10 @@ TagManager:
   - UI
   - 
   - 
-<<<<<<< HEAD
   - 
   - 
   - 
   - 
-=======
-  - Background
-  - Animal
-  - Player
-  - Tree
->>>>>>> Inventory
   - 
   - 
   - 

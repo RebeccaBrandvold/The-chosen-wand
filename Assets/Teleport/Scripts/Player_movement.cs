@@ -14,29 +14,21 @@ public class Player_movement : MonoBehaviour
     public float acceleration = 0.1f;
     public float deacceleration = 0.01f;
     public bool onGround;
-//<<<<<<< HEAD:Assets/Teleport/Scripts/Player_movement.cs
 
     private RaycastHit2D hit;
     //private Healing heal;
     //public Bounds bounds;
     public Collider2D colPlayer;
     private LayerMask layermask;
-//=======
+
     //For turning the player the way it is going and making the animal look at the player. 
-//>>>>>>> Inventory:Assets/Scripts/Player_movement.cs
+
     private SpriteRenderer rend;
     public bool playerturnedLeft = false;
 
     void Start()
     {
-<<<<<<< HEAD:Assets/Teleport/Scripts/Player_movement.cs
-      
-=======
-//<<<<<<< HEAD:Assets/Teleport/Scripts/Player_movement.cs
-      
-//=======
-//>>>>>>> Inventory:Assets/Scripts/Player_movement.cs
->>>>>>> Inventory:Assets/Scripts/Player_movement.cs
+
         rb = GetComponent<Rigidbody2D>();
         rend = GetComponent<SpriteRenderer>();
     }
