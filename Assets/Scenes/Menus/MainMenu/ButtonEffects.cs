@@ -14,7 +14,7 @@ public class ButtonEffects : MonoBehaviour {
 
     public void startPress()
     {
-        SceneManager.LoadScene(1/*SceneNumber*/);
+        SceneManager.LoadScene(0/*SceneNumber*/);
     }
 
     public void LoadSavePress()
@@ -24,7 +24,7 @@ public class ButtonEffects : MonoBehaviour {
 
     public void SettingsPress()
     {
-        SceneManager.LoadScene(0/*SceneNumber*/);
+        SceneManager.LoadScene(1/*SceneNumber*/);
     }
 
     public void ExitPress()
