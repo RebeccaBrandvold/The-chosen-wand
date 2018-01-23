@@ -9,16 +9,14 @@ public class Slot2_check : MonoBehaviour {
     public bool rose_red = false;
     public bool rose_yellow = false;
     public bool stone = false;
-    public bool tried = false;
-    public bool onetry = false;
-    public bool occupied = false;
     public bool occupied2 = false;
-    // Use this for initialization
+    public bool onetry = false;
+
     void Start () {
 	
 	}
 	
-	// Update is called once per frame
+
 	void Update () {
 	
 	}
@@ -26,9 +24,10 @@ public class Slot2_check : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Items"))
         {
-            // onetry = true;
+           // Debug.Log("Crashed");
+            onetry = true;
             occupied2 = true;
-            tried = true;
+            //tried = true;
         }
         if (collision.gameObject.CompareTag("Rogn"))
         {
@@ -59,8 +58,9 @@ public class Slot2_check : MonoBehaviour {
     {
         if (collision.gameObject.CompareTag("Items"))
         {
+            occupied2 = false;
             onetry = false;
-            tried = false;
+            //tried = false;
         }
         if (collision.gameObject.CompareTag("Rogn"))
         {

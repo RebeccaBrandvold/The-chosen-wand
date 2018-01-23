@@ -9,16 +9,15 @@ public class ClickBag : MonoBehaviour, IPointerDownHandler
     public GameObject Inventory;
     public GameObject otherInv;
 
-    public bool InventoryOn = false;
+    public bool InventoryOn = true;
 
     private PotionHUD potion;
-	// Use this for initialization
+
 	void Start ()
     {
         potion = FindObjectOfType<PotionHUD>();
 	}
-	//They are stopping each other from popping up. 
-	// Update is called once per frame
+
 	void Update ()
     {
         if (InventoryOn)
@@ -26,9 +25,7 @@ public class ClickBag : MonoBehaviour, IPointerDownHandler
             if(potion.PotionInvOn)
             {
                 potion.InventoryPotion.SetActive(false);
-                //potion.PotionInvOn = !potion.InventoryPotion;
             }
-            //otherInv.SetActive(false);
             Inventory.SetActive(true);
         }
         else

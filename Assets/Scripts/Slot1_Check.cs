@@ -9,13 +9,13 @@ public class Slot1_Check : MonoBehaviour {
     public bool rose_red = false;
     public bool rose_yellow = false;
     public bool stone = false;
-    public bool tried = false;
     public bool occupied = false;
     public bool occupied2 = false;
     public bool item = false;
     public Transform curitem;
 
     private Slot2_check slot2;
+    private Drag drag;
 
     public GameObject[] invItems = new GameObject[6];
 
@@ -23,14 +23,14 @@ public class Slot1_Check : MonoBehaviour {
     private Vector3 orgposRogn;
 
     public bool onetry = false;
-    // Use this for initialization
+
     void Start ()
     {
         slot2 = FindObjectOfType<Slot2_check>();
-	
+        drag = FindObjectOfType<Drag>();
 	}
 	
-	// Update is called once per frame
+
 	void Update ()
     {
 
@@ -41,11 +41,11 @@ public class Slot1_Check : MonoBehaviour {
         if (collision.gameObject.CompareTag("Items"))
         {
             occupied = true;
-            //onetry = true;
-            tried = true;
+               onetry = true;
         }
         if (collision.gameObject.CompareTag("Rogn"))
         {
+            //get the collider on which you crashed
             curitem = collision.transform;
             rogn = true;
         }
@@ -75,13 +75,14 @@ public class Slot1_Check : MonoBehaviour {
             stone = true;
         }
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Items"))
         {
+            //if(!drag.test)
             occupied = false;
             onetry = false;
-            tried = false;
         }
         if (collision.gameObject.CompareTag("Rogn"))
         {

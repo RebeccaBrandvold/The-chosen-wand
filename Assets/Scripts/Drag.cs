@@ -6,32 +6,29 @@ using System;
 
 public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
-
+    //The slots on the menu where the item is placed
     public GameObject slot1;
     public GameObject slot2;
-
+    //How long to wait before you can move the item again. 
+    //Need it to set the item into place automatically, so the player can't move it before this. 
     public float waittime = 0.5f;
-    public bool test = false;
 
+    //Are we dragging the object?
     private bool dragging = false;
+    //The distance from the obj to the camera
+    private float distance;
+    //Are we one of the slots?
     public bool onslot = false;
     //These variables will let the item teleport to the slot when inside there. 
     public bool onslot1 = false;
     public bool onslot2 = false;
     private bool justonslot = false;
-    private bool teleporttoslot = false;
-    public bool twoinslot = false;
-    private float distance;
-    private Vector2 distancebetweenobj;
 
-    private Inventory inv;
-    //public Vector3 orgpos;
     public Vector3 orgpos2;
-    public RectTransform rect;
     private Slot1_Check slot1_scrp;
     private Slot2_check slot2_scrp;
-
-    //public GameObject other;
+    private Taming taming;
+    private Crafting craft;
 
     public GameObject[] item = new GameObject[6];
     //Dum måte å gjøre det på, gjør det likevel
@@ -42,61 +39,54 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private Vector3 orgposRoseyellow;
     private Vector3 orgposStone;
 
-    private bool sal;
-    // Use this for initialization
+    public bool stopchanesfromdropping = false;
+
     void Start()
     {
-        inv = FindObjectOfType<Inventory>();
+        craft = FindObjectOfType<Crafting>();
+        taming = FindObjectOfType<Taming>();
         slot1_scrp = FindObjectOfType<Slot1_Check>();
         slot2_scrp = FindObjectOfType<Slot2_check>();
-        // orgpos = transform.position;
         orgpos2 = transform.localPosition;
         orgposRogn = item[0].transform.localPosition;
-        orgposSalmon = item[1].transform.localPosition;
-        orgposKantarell = item[2].transform.localPosition;
+        orgposKantarell = item[1].transform.localPosition;
+        orgposSalmon = item[2].transform.localPosition;
 
         orgposRosered = item[3].transform.localPosition;
         orgposRoseyellow = item[4].transform.localPosition;
         orgposStone = item[5].transform.localPosition;
-
-
-        // thisobj = GetComponent<GameObject>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-
+        //Supposed to make the items on the slot move back to orgpos if the menu is gone
+        //if (!taming.withinRange)
+        //{
+        //    transform.localPosition = orgpos2;
+        //}
+        if(taming.returntoInv)
+        {
+            transform.localPosition = orgpos2;
+        }
+        //If you are not on any of the slots, move it to the inventory. 
         if (!onslot1 && !onslot2)
         {
-            //I'm not sure why I have to use localPosition in this case. Like kinda do. It has to move within in the canvas space, not world. 
+            //It has to move within in the canvas space, not world, why we use local. 
             transform.localPosition = orgpos2;
-            //transform.position = orgpos;
         }
-        //Moves the items back to the inventory if they combined two ingriedents wrong
-        if (slot1_scrp.onetry && slot2_scrp)
+        //Moves the items back to the inventory if they combined two ingriedents wrong.
+        //Right now, these scripts are turned inactive as you are not near the animal
+        //This leads to that the this script can't find this, causing an error. 
+        if (slot1_scrp.onetry && slot2_scrp.onetry && !stopchanesfromdropping)
         {
             StartCoroutine(WrongCombination());
+            stopchanesfromdropping = true;
         }
-
-        //apparently, I can't make the bug work again so kinda useless. Supposed to solve how to decide which object is in front of the other. 
-        // Vector2 forward = transform.TransformDirection(Vector3.forward);
-        // distancebetweenobj = other.transform.position - transform.position;
-        // if(Vector2.Dot(forward, distancebetweenobj) < 0)
-        // {
-        //     //this obj is ahead
-        //     Debug.Log("current obj is ahead");
-        // }
-        // else if(Vector2.Dot(forward, distancebetweenobj) > 0)
-        // {
-        //     //other obj is ahead
-        // }
-        // else
-        //they are side by side, rettvinklet på hverandre
-        //Debug.Log(slot1.GetInstanceID());
-
+        //If moving object
         if (dragging)
         {
+            //as long as you are not on a slot, you can move the item. 
+            //This bool will turn false after a short time, allowing the object to move quickly after. 
             if (!onslot)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -104,9 +94,6 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
                 transform.position = rayPoint;
             }
         }
-
-        // if (teleporttoslot)
-        //     transform.position = slot2.transform.position;
 
     }
     //for other objects than UI objects
@@ -121,56 +108,97 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     //     dragging = false;
     // }
 
+    //Function used to detect if you have clicked on an UI element
     void IPointerDownHandler.OnPointerDown(PointerEventData eventData)
     {
+        //Calculate the distance between this obj and the camera. 
         distance = Vector3.Distance(transform.position, Camera.main.transform.position);
         dragging = true;
     }
+    //If releasing mousebutton, we are not moving the object anymore
     void IPointerUpHandler.OnPointerUp(PointerEventData eventData)
     {
         dragging = false;
     }
 
-
-    private void OnTriggerEnter2D(Collider2D collision)
+private void OnTriggerEnter2D(Collider2D collision)
     {
+        //If this object collided with slot1 big trigger box, move it automatically to it's position. 
+        //Feels like its locking onto the slot.
         if (collision.gameObject.CompareTag("Slot1"))
         {
-            //if it is occupied, replace the new item with the old one. This creates problems. 
-            if (slot1_scrp.occupied)
-            {
-                transform.position = slot1.transform.position;
-                if (slot1_scrp.rogn)
-                    item[0].transform.position = orgposRogn;
-                else if (slot1_scrp.salmon)
-                    item[1].transform.position = orgposSalmon;
-                else if (slot1_scrp.kantarell)
-                    item[2].transform.position = orgposKantarell;
-                else if (slot1_scrp.rose_red)
-                    item[3].transform.position = orgposRosered;
-                else if (slot1_scrp.rose_yellow)
-                    item[4].transform.position = orgposRoseyellow;
-                else if (slot1_scrp.stone)
-                    item[5].transform.position = orgposStone;
-            }
-            else
-                transform.position = slot1.transform.position;
+            //This method almost worked, but the problem with this one is that the slot registers that
+            //it is occupied, but when you then switch the things, the object going out is telling the slot
+            //that it is not occupied anymore! 
+           //  if (slot1_scrp.occupied)
+           //  {
+           //      slot1_scrp.curitem.transform.localPosition = orgpos2;
+           //     test = true;
+           //  }
 
+            //if it is occupied, replace the new item with the old one.
+            if (slot1_scrp.rogn)
+                {
+                    item[0].transform.localPosition = orgposRogn;
+                }
+                if (slot1_scrp.kantarell)
+                {
+                    item[1].transform.localPosition = orgposKantarell;
+                }
+                if (slot1_scrp.salmon)
+                {
+                    item[2].transform.localPosition = orgposSalmon;
+                }
+                if (slot1_scrp.rose_red)
+                {
+                    item[3].transform.localPosition = orgposRosered;
+                }
+                if (slot1_scrp.rose_yellow)
+                {
+                    item[4].transform.localPosition = orgposRoseyellow;
+                }
+                if (slot1_scrp.stone)
+                {
+                    item[5].transform.localPosition = orgposStone;
+                }
+            transform.position = slot1.transform.position;
 
             onslot1 = true;
+            //if you have not already been locked onto the slot, you can move like normal again.
             if (!justonslot)
                 StartCoroutine(MoveItemAgain());
-            // }
-            //set to this slot position
         }
+
+        //Same with slot1, just with slot2
         if (collision.gameObject.CompareTag("Slot2"))
         {
-          //  if (!slot2_scrp.occupied2)
-          //  {
-                transform.position = slot2.transform.position;
-            //
-            onslot2 = true;
+            if (slot2_scrp.rogn)
+            {
+                item[0].transform.localPosition = orgposRogn;
+            }
+            if (slot2_scrp.kantarell)
+            {
+                item[1].transform.localPosition = orgposKantarell;
+            }
+            if (slot2_scrp.salmon)
+            {
+                item[2].transform.localPosition = orgposSalmon;
+            }
+            if (slot2_scrp.rose_red)
+            {
+                item[3].transform.localPosition = orgposRosered;
+            }
+            if (slot2_scrp.rose_yellow)
+            {
+                item[4].transform.localPosition = orgposRoseyellow;
+            }
+            if (slot2_scrp.stone)
+            {
+                item[5].transform.localPosition = orgposStone;
+            }
+
             transform.position = slot2.transform.position;
+            onslot2 = true;
             if (!justonslot)
                 StartCoroutine(MoveItemAgain());
         }
@@ -178,8 +206,11 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
+        //If not on that slot anymore, turn things false so that things can restart.
+        //Meaning, you can lock onto slot again and detect again if the obj should be moved to inventory
         if (collision.gameObject.CompareTag("Slot1"))
         {
+            //test = false;
             //occupied = false;
             onslot1 = false;
             justonslot = false;
@@ -194,6 +225,8 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         }
 
     }
+    //A function that makes it impossible to move the item through mouse dragging for a short period of time.
+    //Needed that to make sure the object can be locked onto the slot, and then moved normally again.
     private IEnumerator MoveItemAgain()
     {
         onslot = true;
@@ -201,9 +234,10 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         onslot = false;
         justonslot = true;
     }
+    //If there was a wrong combination, this will reset the items to the inventory.
     private IEnumerator WrongCombination()
     {
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(0.2f);
         transform.localPosition = orgpos2;
     }
 

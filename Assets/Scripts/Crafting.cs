@@ -13,7 +13,7 @@ public class Crafting : MonoBehaviour
     public float chances = 3;
 
     public bool lost = false;
-    private Drag curitem;
+    private Drag drag;
     private Slot1_Check check1;
     private Slot2_check check2;
     private bool slot1fill = false;
@@ -25,11 +25,12 @@ public class Crafting : MonoBehaviour
     public GameObject[] itemtodel = new GameObject[2];
     public bool unlocked = false;
 
+
     void Start()
     {
         check1 = FindObjectOfType<Slot1_Check>();
         check2 = FindObjectOfType<Slot2_check>();
-        curitem = FindObjectOfType<Drag>();
+        drag = FindObjectOfType<Drag>();
 
     }
 
@@ -40,7 +41,7 @@ public class Crafting : MonoBehaviour
             lost = true;
             Debug.Log("You used up all your chances");
         }
-
+        //The winning conditions
         if (check1.kantarell && check2.salmon && !lost)
         {
             unlocked = true;
@@ -57,19 +58,20 @@ public class Crafting : MonoBehaviour
             itemtodel[1].SetActive(false);
             Debug.Log("yEAH, WHATEVER");
         }
-        //When you have tried one combination but failed, move the items back to their position in inventory. 
-
-        //The items have empty gameobjects with the tag items and this we can use to check if we have tried an item.
-        else if(check1.tried && check2.tried && (!check1.onetry || !check2.onetry))
+        if(check1.occupied && check2.occupied2)
         {
-            chances--;
-            check1.onetry = true;
-            check2.onetry = true;
-            //Stop it from keep minusering. 
-
-            //check2.tried = false;
-            //Now I have to make sure that if one items is moved away, it means that a new item will trigger that you lose a chance
+            chances = chances - 1;
         }
+
+        //DO NOT DO THIS. Turning these true does so that you can move the items, since an if is dependent that they
+        //turn true in slot1_check and slot2.
+        //else if(!check1.onetry && !check2.onetry)
+        //{
+        //    chances--;
+        //    check1.onetry = true;
+        //    check2.onetry = true;
+        //}
+        //The items have empty gameobjects with the tag items and this we can use to check if we have tried an item.
 
 
     }
