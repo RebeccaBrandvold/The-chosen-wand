@@ -1,8 +1,13 @@
 fileFormatVersion: 2
 guid: 08dd0952f2d23c548858d8b147a48c4a
 folderAsset: yes
+<<<<<<< HEAD
 timeCreated: 1516704902
 licenseType: Pro
+=======
+timeCreated: 1516698911
+licenseType: Free
+>>>>>>> FullGame2.0
 DefaultImporter:
   userData: 
   assetBundleName: 

@@ -14,7 +14,11 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     public float waittime = 0.5f;
 
     //Are we dragging the object?
+<<<<<<< HEAD
     public bool dragging = false;
+=======
+    private bool dragging = false;
+>>>>>>> FullGame2.0
     //The distance from the obj to the camera
     private float distance;
     //Are we one of the slots?
@@ -64,10 +68,17 @@ public class Drag : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         //{
         //    transform.localPosition = orgpos2;
         //}
+<<<<<<< HEAD
       // if(taming.returntoInv)
       // {
       //     transform.localPosition = orgpos2;
       // }
+=======
+        if(taming.returntoInv)
+        {
+            transform.localPosition = orgpos2;
+        }
+>>>>>>> FullGame2.0
         //If you are not on any of the slots, move it to the inventory. 
         if (!onslot1 && !onslot2)
         {

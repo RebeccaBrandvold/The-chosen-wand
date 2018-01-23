@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Teleport/Scripts/Player_movement.cs.meta
 guid: 11d47c0d2d293484c9726cbeb45f5585
 timeCreated: 1516701665
+=======
+guid: 40d120c2bd07bd1439ec964119a5a887
+timeCreated: 1508422353
+>>>>>>> FullGame2.0:Assets/Teleport/Scripts/Player_movement.cs.meta
 licenseType: Free
 MonoImporter:
   serializedVersion: 2

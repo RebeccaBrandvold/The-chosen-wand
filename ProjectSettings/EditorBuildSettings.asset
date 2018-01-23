@@ -8,4 +8,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Menus/MainMenu/MainMenu.unity
   - enabled: 1
-    path: Assets/Scenes/Menus/MainMenu/Options.unity
+    path: Assets/Scenes/PreLevel1.unity
+  - enabled: 1
+    path: Assets/Scenes/CutsceneStart.unity
+  - enabled: 1
+    path: Assets/Scenes/Level1.unity

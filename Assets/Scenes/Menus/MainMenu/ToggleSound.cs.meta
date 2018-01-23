@@ -1,4 +1,5 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 <<<<<<< HEAD:Assets/Scenes/Menus/MainMenu/ToggleSound.cs.meta
 guid: f7fc24a92b0208a4a9631fd3cd76e0cc
 timeCreated: 1515436602
@@ -6,6 +7,15 @@ timeCreated: 1515436602
 guid: a5a9de9965f5cc4459338080adba55cf
 timeCreated: 1516698912
 >>>>>>> Inventory:Assets/Scripts/Crafting.cs.meta
+=======
+<<<<<<< HEAD:Assets/Player_movement.cs.meta
+guid: 1ec4098cbb6621e41875177a7fe54e0e
+timeCreated: 1516119287
+=======
+guid: f7fc24a92b0208a4a9631fd3cd76e0cc
+timeCreated: 1515436602
+>>>>>>> Menu:Assets/Scenes/Menus/MainMenu/ToggleSound.cs.meta
+>>>>>>> FullGame2.0
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
