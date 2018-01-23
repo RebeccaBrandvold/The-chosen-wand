@@ -183,10 +183,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdae462262825524e9a18535097bc9d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  other: {fileID: 1895087385}
-  animal: {fileID: 0}
-  move: 0
-  justtransported: 0
 --- !u!50 &33863725
 Rigidbody2D:
   serializedVersion: 2
@@ -297,9 +293,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e73d4c3b30dfb474f870d0ba94d73574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tamingmenu: {fileID: 1915934124}
-  returntoInv: 0
-  withinRange: 0
 --- !u!61 &124425009
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -398,13 +391,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782d52b66225c7f4990e00c8af61ef68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: 0
-  wagging: 0
-  speed: 3
-  player: {fileID: 1407880310}
-  Animal: {fileID: 124425011}
-  Player: {fileID: 1379832508}
-  rayDistance: 2
 --- !u!95 &124425015
 Animator:
   serializedVersion: 3
@@ -506,12 +492,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 164126266}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57971a8b4ca9714597bda9e33f4dc09, type: 3}
+  m_Script: {fileID: 11500000, guid: be722441ad9a430439504ab983f3d1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slot1: {fileID: 494474142}
   slot2: {fileID: 1344445176}
   waittime: 0.5
+  dragging: 0
   onslot: 0
   onslot1: 0
   onslot2: 0
@@ -614,7 +601,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 169321829}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9371d6e7f73b71143b9be1666ec4d74d, type: 3}
+  m_Script: {fileID: 11500000, guid: a5a9de9965f5cc4459338080adba55cf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rightitem: {fileID: 199513565}
@@ -626,8 +613,8 @@ MonoBehaviour:
   image: {fileID: 169321832}
   sprite: {fileID: 21300000, guid: 48e7ffb753f8ccb4584cc719338b1550, type: 3}
   itemtodel:
-  - {fileID: 1282832812}
   - {fileID: 199513565}
+  - {fileID: 1282832812}
   unlocked: 0
 --- !u!114 &169321832
 MonoBehaviour:
@@ -713,12 +700,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 199513565}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57971a8b4ca9714597bda9e33f4dc09, type: 3}
+  m_Script: {fileID: 11500000, guid: be722441ad9a430439504ab983f3d1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slot1: {fileID: 494474142}
   slot2: {fileID: 1344445176}
   waittime: 0.5
+  dragging: 0
   onslot: 0
   onslot1: 0
   onslot2: 0
@@ -1354,7 +1342,7 @@ Prefab:
     - target: {fileID: 11423604, guid: 306c3b5d71a82c74eabe3f580c49e2c3, type: 2}
       propertyPath: colPlayer
       value: 
-      objectReference: {fileID: 972193763}
+      objectReference: {fileID: 1407880314}
     - target: {fileID: 5815770, guid: 306c3b5d71a82c74eabe3f580c49e2c3, type: 2}
       propertyPath: m_Offset.y
       value: -0.4
@@ -1499,7 +1487,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 494474142}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41e2bfc2967ccd34c9e04539b03b3626, type: 3}
+  m_Script: {fileID: 11500000, guid: 83ad045c3b01397458dba9e42f66c56d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rogn: 0
@@ -1512,13 +1500,6 @@ MonoBehaviour:
   occupied2: 0
   item: 0
   curitem: {fileID: 0}
-  invItems:
-  - {fileID: 164126266}
-  - {fileID: 199513565}
-  - {fileID: 1282832812}
-  - {fileID: 1173075373}
-  - {fileID: 1071203515}
-  - {fileID: 1795670977}
   onetry: 0
 --- !u!50 &494474148
 Rigidbody2D:
@@ -2104,13 +2085,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 782d52b66225c7f4990e00c8af61ef68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  test: 0
-  wagging: 0
-  speed: 0
-  player: {fileID: 0}
-  Animal: {fileID: 0}
-  Player: {fileID: 0}
-  rayDistance: 2
 --- !u!20 &878640426 stripped
 Camera:
   m_PrefabParentObject: {fileID: 2009106, guid: c22b19205283f034b9190f4238ab7653,
@@ -2249,11 +2223,6 @@ Transform:
   - {fileID: 995456183}
   m_Father: {fileID: 0}
   m_RootOrder: 13
---- !u!61 &972193763 stripped
-BoxCollider2D:
-  m_PrefabParentObject: {fileID: 6140672, guid: 4f0af47486dcccd4caf060fb8307c21c,
-    type: 2}
-  m_PrefabInternal: {fileID: 2080530775}
 --- !u!1 &995456182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2975,12 +2944,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1071203515}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57971a8b4ca9714597bda9e33f4dc09, type: 3}
+  m_Script: {fileID: 11500000, guid: be722441ad9a430439504ab983f3d1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slot1: {fileID: 494474142}
   slot2: {fileID: 1344445176}
   waittime: 0.5
+  dragging: 0
   onslot: 0
   onslot1: 0
   onslot2: 0
@@ -3122,12 +3092,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1173075373}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57971a8b4ca9714597bda9e33f4dc09, type: 3}
+  m_Script: {fileID: 11500000, guid: be722441ad9a430439504ab983f3d1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slot1: {fileID: 494474142}
   slot2: {fileID: 1344445176}
   waittime: 0.5
+  dragging: 0
   onslot: 0
   onslot1: 0
   onslot2: 0
@@ -3337,12 +3308,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1282832812}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57971a8b4ca9714597bda9e33f4dc09, type: 3}
+  m_Script: {fileID: 11500000, guid: be722441ad9a430439504ab983f3d1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slot1: {fileID: 494474142}
   slot2: {fileID: 1344445176}
   waittime: 0.5
+  dragging: 0
   onslot: 0
   onslot1: 0
   onslot2: 0
@@ -3581,7 +3553,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1344445176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 005b82f4a1ff1a24790bb975154fe255, type: 3}
+  m_Script: {fileID: 11500000, guid: 7222940787f23c14c9683188b92d9e25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   rogn: 0
@@ -3703,7 +3675,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1407880310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a1ead903c28965f4cbb555b44fa17a27, type: 3}
+  m_Script: {fileID: 11500000, guid: f199e2224ed2fae4eab2bf0b445c4ef5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   items:
@@ -3725,8 +3697,8 @@ MonoBehaviour:
   sprite4: {fileID: 21300000, guid: 720ecf1fb1ddd0d48a78c7eec92afaf5, type: 3}
   image5: {fileID: 1795670982}
   sprite5: {fileID: 21300000, guid: 908fb9504ec0e0a4abe25b02d6034458, type: 3}
-  rogn: {fileID: 164126266}
-  kantarell: {fileID: 199513565}
+  rogn: {fileID: 199513565}
+  kantarell: {fileID: 164126266}
   salmon: {fileID: 1282832812}
   Rose_red: {fileID: 1173075373}
   rose_yellow: {fileID: 1071203515}
@@ -3755,16 +3727,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1407880310}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40d120c2bd07bd1439ec964119a5a887, type: 3}
+  m_Script: {fileID: 11500000, guid: 11d47c0d2d293484c9726cbeb45f5585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4.5549865
-  jumpstrength: 7
+  speed: 2
+  jumpstrength: 4
   maxSpeed: 8
   minSpeed: 0
   acceleration: 0.1
   deacceleration: 0.01
-  onGround: 1
+  onGround: 0
+  colPlayer: {fileID: 1407880314}
   playerturnedLeft: 0
 --- !u!61 &1407880314
 BoxCollider2D:
@@ -4218,12 +4191,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1795670977}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f57971a8b4ca9714597bda9e33f4dc09, type: 3}
+  m_Script: {fileID: 11500000, guid: be722441ad9a430439504ab983f3d1c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   slot1: {fileID: 494474142}
   slot2: {fileID: 1344445176}
   waittime: 0.5
+  dragging: 0
   onslot: 0
   onslot1: 0
   onslot2: 0
@@ -4481,9 +4455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e88301d5e96e64d4d8a43309069a2948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  otherspot: {fileID: 33863723}
-  animal: {fileID: 0}
-  justtransported: 0
 --- !u!50 &1895087387
 Rigidbody2D:
   serializedVersion: 2
