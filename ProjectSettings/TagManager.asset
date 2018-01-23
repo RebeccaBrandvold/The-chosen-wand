@@ -10,6 +10,15 @@ TagManager:
   - Bullet
   - Companion
   - Animal
+<<<<<<< HEAD
+=======
+  - Rose_red
+  - Rose_yellow
+  - Stone
+  - Potion
+  - Bag
+  - Branch
+>>>>>>> Inventory
   layers:
   - Default
   - TransparentFX
@@ -19,10 +28,17 @@ TagManager:
   - UI
   - 
   - 
+<<<<<<< HEAD
   - Player
   - 
   - 
   - 
+=======
+  - Background
+  - Animal
+  - Player
+  - Tree
+>>>>>>> Inventory
   - 
   - 
   - 

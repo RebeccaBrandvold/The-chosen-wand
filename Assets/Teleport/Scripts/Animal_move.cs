@@ -6,7 +6,7 @@ public class Animal_move : MonoBehaviour
 
     public bool test;
     public bool wagging = false;
-    public Animator anim;
+    private Animator anim;
     private SpriteRenderer rend;
     public float speed;
     private Rigidbody rb;
