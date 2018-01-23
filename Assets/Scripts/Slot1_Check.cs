@@ -17,7 +17,7 @@ public class Slot1_Check : MonoBehaviour {
     private Slot2_check slot2;
     private Drag drag;
 
-    public GameObject[] invItems = new GameObject[6];
+    //public GameObject[] invItems = new GameObject[6];
 
     //kunne ha lagd et script som har kontroll på alle de posisjonen
     private Vector3 orgposRogn;
